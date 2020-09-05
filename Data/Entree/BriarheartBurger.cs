@@ -18,7 +18,7 @@ namespace BleakwindBuffet.Data.Entree
     public class BriarheartBurger
     {
         /// <value>
-        /// Gets the Price of the entree.
+        /// Gets the price of the entree.
         /// </<value>>
         public double Price => 6.32;
 

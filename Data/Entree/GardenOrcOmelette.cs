@@ -19,7 +19,7 @@ namespace BleakwindBuffet.Data.Entree
     public class GardenOrcOmelette
     {
         /// <value>
-        /// Gets the Price of the entree.
+        /// Gets the price of the entree.
         /// </<value>>
         public double Price => 4.57;
 
