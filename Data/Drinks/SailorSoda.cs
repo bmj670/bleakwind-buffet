@@ -16,9 +16,9 @@ namespace BleakwindBuffet.Data.Drinks
     public class SailorSoda
     {
         /// <value>
-        /// Gets/sets whether the drink contains ice. False by default. 
+        /// Gets/sets whether the drink contains ice. True by default. 
         /// </value>
-        public bool Ice { get; set; } = false;
+        public bool Ice { get; set; } = true;
 
         /// <value>
         /// Gets/sets the size of the drink. Default Size is small. 
@@ -86,10 +86,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <returns>The name of the entree.</returns>
         public override string ToString()
         {
-            string size = Size.ToString();
-            string flavor = Flavor.ToString();
-
-            return $"{size} {flavor} Markarth Milk";
+            return $"{Size} {Flavor} Sailor Soda";
         }
     }
 }

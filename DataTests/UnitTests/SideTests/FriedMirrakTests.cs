@@ -1,10 +1,11 @@
 ﻿/*
  * Author: Zachery Brunner
+ * Edited by: Benjamin M. Manglona Jr.
  * Class: FriedMiraakTests.cs
  * Purpose: Test the FriedMiraak.cs class in the Data library
  */
 using Xunit;
-
+using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 
@@ -15,16 +16,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldBeSmallByDefault()
         {
+            FriedMiraak mir = new FriedMiraak();
+            Assert.Equal(Size.Small, mir.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
+            FriedMiraak mir = new FriedMiraak();
+            mir.Size = Size.Large;
+            Assert.Equal(Size.Large, mir.Size);
+            mir.Size = Size.Medium;
+            Assert.Equal(Size.Medium, mir.Size);
+            mir.Size = Size.Small;
+            Assert.Equal(Size.Small, mir.Size);
         }
 
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
+            FriedMiraak mir = new FriedMiraak();
+            Assert.Empty(mir.SpecialInstructions);
         }
 
         [Theory]
@@ -33,6 +45,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 2.88)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
+            FriedMiraak mir = new FriedMiraak();
+            mir.Size = size;
+            Assert.Equal(price, mir.Price);
         }
 
         [Theory]
@@ -41,6 +56,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 306)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
+            FriedMiraak mir = new FriedMiraak();
+            mir.Size = size;
+            Assert.Equal(calories, mir.Calories);
         }
 
         [Theory]
@@ -49,6 +67,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Fried Miraak")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
+            FriedMiraak mir = new FriedMiraak();
+            mir.Size = size;
+            Assert.Equal(name, mir.ToString());
         }
     }
 }

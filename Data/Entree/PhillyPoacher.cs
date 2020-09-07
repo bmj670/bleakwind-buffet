@@ -20,7 +20,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <value>
         /// Gets the price of the entree.
         /// </<value>>
-        public double Price => 7.32;
+        public double Price => 7.23;
 
         /// <value>
         /// Gets the calories of the entree.
