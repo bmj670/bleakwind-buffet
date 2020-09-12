@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: MarkarthMilkTests.cs
  * Purpose: Test the MarkarthMilk.cs class in the Data library
  */
@@ -13,6 +12,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class MarkarthMilkTests
     {
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+            Assert.IsAssignableFrom<Drink>(milk);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            MarkarthMilk milk = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(milk);
+        }
+
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

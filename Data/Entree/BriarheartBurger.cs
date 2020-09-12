@@ -15,50 +15,50 @@ namespace BleakwindBuffet.Data.Entree
     /// <remarks>
     /// A 1/4lb single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.
     /// </remarks>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 6.32;
-
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 732;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains a bun.
+        /// In U.S. Dollars
         /// </value>
+        public override double Price => 6.32;
+
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 732;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains a bun.
+        /// </summary>
         public bool Bun { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains ketchup.
-        /// </value>
+        /// </summary>
         public bool Ketchup { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mustard.
-        /// </value>
+        /// </summary>
         public bool Mustard { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains pickles.
-        /// </value>
+        /// </summary>
         public bool Pickle { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains cheese.
-        /// </value>
+        /// </summary>
         public bool Cheese { get; set; } = true;
 
-        /// <value>
-        /// Gets the special instructions for creating a Briarheart Burger entree.
-        /// </value>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the entree.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

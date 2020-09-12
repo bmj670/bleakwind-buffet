@@ -13,53 +13,50 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing a Dragonborn Waffle Fries side.
     /// </summary>
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
+        /// <summary>
+        /// The price of the side.
+        /// </summary>
         /// <value>
-        /// Gets/sets the size of the drink. Default Size is small. 
+        /// In U.S. Dollars
         /// </value>
-        public Size Size { get; set; } = Size.Small;
-
-
-        private double price = 0.00;    //Private backing variable for the "Price" property.
-
-        /// <value>
-        /// Gets the price of the drink.
-        /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (Size == Size.Small) price = 0.42;
-                if (Size == Size.Medium) price = 0.76;
-                if (Size == Size.Large) price = 0.96;
-
-                return price;
+                switch (Size)
+                {
+                    case Size.Small: return 0.42;
+                    case Size.Medium: return 0.76;
+                    case Size.Large: return 0.96;
+                    default: throw new NotImplementedException("Should not execute");
+                }
             }
         }
 
 
-        private uint calories = 0;  //Private backing variable for the "Calories" property.
-
-        /// <value>
-        /// Gets the calories of the drink. 
-        /// </value>
-        public uint Calories
+        /// <summary>
+        /// The calories of the side.
+        /// </summary>
+        public override uint Calories
         {
             get
             {
-                if (Size == Size.Small) calories = 77;
-                if (Size == Size.Medium) calories = 89;
-                if (Size == Size.Large) calories = 100;
-
-                return calories;
+                switch (Size)
+                {
+                    case Size.Small: return 77;
+                    case Size.Medium: return 89;
+                    case Size.Large: return 100;
+                    default: throw new NotImplementedException("Should not execute");
+                }
             }
         }
 
-        /// <value>
-        /// Gets the special instructions for creating the side. 
-        /// </value>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the side.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

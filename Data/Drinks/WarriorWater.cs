@@ -13,37 +13,32 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing a Warrior Water Drink.
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
-        /// <value>
-        /// Gets/sets whether the drink contains ice. False by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink contains ice.
+        /// </summary>
         public bool Ice { get; set; } = true;
 
-        /// <value>
-        /// Gets/sets whether the drink contains lemon. False by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink contains lemon.
+        /// </summary>
         public bool Lemon { get; set; } = false;
 
-        /// <value>
-        /// Gets/sets the size of the drink. Default Size is small. 
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
+        /// <summary>
+        /// The price of the drink.
+        /// </summary>
+        public override double Price => 0.00;
 
-        /// <value>
-        /// Gets the price of the drink.
-        /// </value>
-        public double Price => 0.00;
+        /// <summary>
+        /// The calories of the drink.
+        /// </summary>
+        public override uint Calories => 0;
 
-        /// <value>
-        /// Gets the calories for the drink.
-        /// </value>
-        public uint Calories => 0;
-
-        /// <value>
-        /// Gets the special instructions for creating a Warrior Water drink. 
-        /// </value>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions for creating the drink.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

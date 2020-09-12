@@ -12,26 +12,26 @@ namespace BleakwindBuffet.Data.Entree
     /// <summary>
     /// A class representing a Thugs T-Bone entree.
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 6.44;
+        /// In U.S. Dollars
+        /// </value>
+        public override double Price => 6.44;
 
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 982;
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 982;
 
 
         /// <summary>
-        /// Gets the special instructions for creating a Thugs T-Bone entree.
+        /// The special instructions to create the entree.
         /// </summary>
-        /// <remarks>
-        /// Since there are no options (properties), it returns an empty list. 
-        /// </remarks>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

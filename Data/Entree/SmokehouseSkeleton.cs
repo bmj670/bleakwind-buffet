@@ -16,45 +16,45 @@ namespace BleakwindBuffet.Data.Entree
     /// A breakfast combo consisting of sausage links, eggs, and hash browns on the side. 
     /// Topped with the syrup of your choice.
     /// </remarks>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 5.62;
-
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 602;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains sausage links.
+        /// In U.S. Dollars
         /// </value>
+        public override double Price => 5.62;
+
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 602;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains sausage links.
+        /// </summary>
         public bool SausageLink { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains eggs.
-        /// </value>
+        /// </summary>
         public bool Egg { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains hash browns.
-        /// </value>
+        /// </summary>
         public bool HashBrowns { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree containts pancakes.
         /// </summary>
         public bool Pancake { get; set; } = true;
 
         /// <summary>
-        /// Gets the special instructions for creating a Smokehouse Skeleton entree.
+        /// The special instructions to create the entree.
         /// </summary>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

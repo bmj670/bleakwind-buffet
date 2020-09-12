@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */
@@ -12,6 +11,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class GardenOrcOmeletteTests
     {
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            GardenOrcOmelette oml = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<Entree>(oml);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            GardenOrcOmelette oml = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<IOrderItem>(oml);
+        }
+
         [Fact]
         public void ShouldInlcudeBroccoliByDefault()
         {

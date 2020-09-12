@@ -15,40 +15,40 @@ namespace BleakwindBuffet.Data.Entree
     /// <remarks>
     /// A cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.
     /// </remarks>
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 7.23;
-
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 784;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains sirloin.
+        /// In U.S. Dollars
         /// </value>
+        public override double Price => 7.23;
+
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 784;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains sirloin.
+        /// </summary>
         public bool Sirloin { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains onions.
-        /// </value>
+        /// </summary>
         public bool Onion { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains a roll.
-        /// </value>
+        /// </summary>
         public bool Roll { get; set; } = true;
 
         /// <summary>
-        /// Gets the special instructions for creating a Philly Poacher entree.
+        /// The special instructions to create the entree.
         /// </summary>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

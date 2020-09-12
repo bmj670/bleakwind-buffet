@@ -13,63 +13,61 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing a Silor Soda drink.
     /// </summary>
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
-        /// <value>
-        /// Gets/sets whether the drink contains ice. True by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink contains ice.
+        /// </summary>
         public bool Ice { get; set; } = true;
 
-        /// <value>
-        /// Gets/sets the size of the drink. Default Size is small. 
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
 
-        /// <value>
-        /// Gets/sets the flavor of the drink. Default flavor is Cherry. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets the flavor of the drink.
+        /// </summary>
         public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
 
 
-        private double price = 0.00;    //Private backing variable for the "Price" property.
-
+        /// <summary>
+        /// The price of the drink.
+        /// </summary>
         /// <value>
-        /// Gets the price of the drink.
+        /// In U.S. Dollars
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (Size == Size.Small) price = 1.42;
-                if (Size == Size.Medium) price = 1.74;
-                if (Size == Size.Large) price = 2.07;
-
-                return price;
+                switch (Size)
+                {
+                    case Size.Small: return 1.42;
+                    case Size.Medium: return 1.74;
+                    case Size.Large: return 2.07;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-
-        private uint calories = 0;      //Private backing variable for the "Price" property.
-
-        /// <value>
-        /// Gets the calories of the drink. 
-        /// </value>
-        public uint Calories
+        /// <summary>
+        /// The calories of the drink.
+        /// </summary>
+        public override uint Calories
         {
             get
             {
-                if (Size == Size.Small) calories = 117;
-                if (Size == Size.Medium) calories = 153;
-                if (Size == Size.Large) calories = 205;
-
-                return calories;
+                switch (Size)
+                {
+                    case Size.Small: return 117;
+                    case Size.Medium: return 153;
+                    case Size.Large: return 205;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-        /// <value>
-        /// Gets the special instructions for creating a Sailor Soda drink. 
-        /// </value>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the drink.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

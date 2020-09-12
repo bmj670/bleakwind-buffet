@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: VokunSaladTests.cs
  * Purpose: Test the VokunSalad.cs class in the Data library
  */
@@ -13,6 +12,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class VokunSaladTests
     {
+        [Fact]
+        public void ShouldBeASide()
+        {
+            VokunSalad vok = new VokunSalad();
+            Assert.IsAssignableFrom<Side>(vok);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            VokunSalad vok = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(vok);
+        }
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {

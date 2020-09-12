@@ -16,76 +16,76 @@ namespace BleakwindBuffet.Data.Entree
     /// A 1lb burger with two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, 
     /// pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.
     /// </remarks>
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 8.32;
-
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 943;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains a bun.
+        /// In U.S. Dollars
         /// </value>
+        public override double Price => 8.32;
+
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 943;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains a bun.
+        /// </summary>
         public bool Bun { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains ketchup.
-        /// </value>
+        /// </summary>
         public bool Ketchup { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mustard.
-        /// </value>
+        /// </summary>
         public bool Mustard { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains pickles.
-        /// </value>
+        /// </summary>
         public bool Pickle { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains cheese.
-        /// </value>
+        /// </summary>
         public bool Cheese { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains tomatos.
-        /// </value>
+        /// </summary>
         public bool Tomato { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains lettuce.
-        /// </value>
+        /// </summary>
         public bool Lettuce { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mayo.
-        /// </value>
+        /// </summary>
         public bool Mayo { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains bacon.
-        /// </value>
+        /// </summary>
         public bool Bacon { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains an egg.
-        /// </value>
+        /// </summary>
         public bool Egg { get; set; } = true;
 
 
-        /// <value>
-        /// Gets the special instructions for creating a Thalmor Triple burger entree.
-        /// </value>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the entree.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

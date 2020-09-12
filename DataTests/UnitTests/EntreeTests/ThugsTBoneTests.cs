@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: ThugsTBoneTests.cs
  * Purpose: Test the ThugsTBone.cs class in the Data library
  */
@@ -12,6 +11,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThugsTBoneTests
     {
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            ThugsTBone tb = new ThugsTBone();
+            Assert.IsAssignableFrom<Entree>(tb);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            ThugsTBone tb = new ThugsTBone();
+            Assert.IsAssignableFrom<IOrderItem>(tb);
+        }
+
         [Fact]
         public void ShouldReturnCorrectPrice()
         {

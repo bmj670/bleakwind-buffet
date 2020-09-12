@@ -16,45 +16,45 @@ namespace BleakwindBuffet.Data.Entree
     /// A vegetarian entree with a two egg omelette packed with a mix of broccoli, 
     /// mushrooms, and tomatoes. Topped with cheddar cheese.
     /// </remarks>
-    public class GardenOrcOmelette
+    public class GardenOrcOmelette : Entree
     {
-        /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 4.57;
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
+        public override double Price => 4.57;
 
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 404;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains broccoli.
+        /// In U.S. Dollars
         /// </value>
+        public override uint Calories => 404;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains broccoli.
+        /// </summary>
         public bool Broccoli { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mushrooms.
-        /// </value>
+        /// </summary>
         public bool Mushrooms { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains tomatos.
-        /// </value>
+        /// </summary>
         public bool Tomato { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains cheddar.
-        /// </value>
+        /// </summary>
         public bool Cheddar { get; set; } = true;
 
         /// <summary>
-        /// Gets the special instructions for creating a Garden Orc Omelette entree.
+        /// The special instructions to create the entree.
         /// </summary>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

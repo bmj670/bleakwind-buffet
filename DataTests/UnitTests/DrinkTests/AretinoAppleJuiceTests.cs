@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: AretinoAppleJuiceTests.cs
  * Purpose: Test the AretinoAppleJuice.cs class in the Data library
  */
@@ -15,6 +14,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class AretinoAppleJuiceTests
     {
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<Drink>(aj);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {

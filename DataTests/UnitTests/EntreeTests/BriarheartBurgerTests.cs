@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: BriarheartBurgerTests.cs
  * Purpose: Test the BriarheartBurger.cs class in the Data library
  */
@@ -12,7 +11,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class BriarheartBurgerTests
     {
-        
+        [Fact]
+        public void ShouldBeAnEntree()
+        {
+            BriarheartBurger br = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(br);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            BriarheartBurger br = new BriarheartBurger();
+            Assert.IsAssignableFrom<IOrderItem>(br);
+        }
+
         [Fact]
         public void ShouldIncludeBunByDefault()
         {

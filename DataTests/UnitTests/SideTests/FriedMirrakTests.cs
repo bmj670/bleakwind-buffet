@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: FriedMiraakTests.cs
  * Purpose: Test the FriedMiraak.cs class in the Data library
  */
@@ -13,6 +12,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class FriedMiraakTests
     {
+        [Fact]
+        public void ShouldBeASide()
+        {
+            FriedMiraak mir = new FriedMiraak();
+            Assert.IsAssignableFrom<Side>(mir);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            FriedMiraak mir = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(mir);
+        }
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {

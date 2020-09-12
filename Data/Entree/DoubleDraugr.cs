@@ -16,66 +16,66 @@ namespace BleakwindBuffet.Data.Entree
     /// A 1/2lb double patty burger on a brioche bun. Comes with ketchup, mustard, 
     /// pickle, cheese, tomato, lettuce, and mayo.
     /// </remarks>
-    public class DoubleDraugr
+    public class DoubleDraugr : Entree
     {
+        /// <summary>
+        /// The price of the entree.
+        /// </summary>
         /// <value>
-        /// Gets the price of the entree.
-        /// </<value>>
-        public double Price => 7.32;
-
-        /// <value>
-        /// Gets the calories of the entree.
-        /// </<value>>
-        public uint Calories => 843;
-
-        /// <value>
-        /// Gets/Sets whether the entree contains a bun.
+        /// In U.S. Dollars
         /// </value>
+        public override double Price => 7.32;
+
+        /// <summary>
+        /// The calories of the entree.
+        /// </summary>
+        public override uint Calories => 843;
+
+        /// <summary>
+        /// Gets/Sets whether the entree contains a bun.
+        /// </summary>
         public bool Bun { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains ketchup.
-        /// </value>
+        /// </summary>
         public bool Ketchup { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mustard.
-        /// </value>
+        /// </summary>
         public bool Mustard { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains pickles.
-        /// </value>
+        /// </summary>
         public bool Pickle { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains cheese.
-        /// </value>
+        /// </summary>
         public bool Cheese { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains tomatos.
-        /// </value>
+        /// </summary>
         public bool Tomato { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains lettuce.
-        /// </value>
+        /// </summary>
         public bool Lettuce { get; set; } = true;
 
-        /// <value>
+        /// <summary>
         /// Gets/Sets whether the entree contains mayo.
-        /// </value>
+        /// </summary>
         public bool Mayo { get; set; } = true;
 
 
-        /// <value>
-        /// Gets the special instructions for creating a Double Draugr burger entree.
-        /// </value>
-        /// <remarks>
-        /// If there are no special instructions, it returns an empty list.
-        /// </remarks>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the entree.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {

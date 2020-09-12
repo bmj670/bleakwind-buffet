@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: DragonbornWaffleFriesTests.cs
  * Purpose: Test the DragonbornWaffleFries.cs class in the Data library
  */
@@ -13,6 +12,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        [Fact]
+        public void ShouldBeASide()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<Side>(fries);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(fries);
+        }
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {

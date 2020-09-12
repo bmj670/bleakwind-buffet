@@ -13,58 +13,54 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing an Aretino Apple Juice drink.
     /// </summary>
-    public class AretinoAppleJuice
+    public class AretinoAppleJuice : Drink
     {
-        /// <value>
-        /// Gets/sets whether the drink contains ice. False by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink contains ice. 
+        /// </summary>
         public bool Ice { get; set; } = false;
 
-        /// <value>
-        /// Gets/sets the size of the drink. Default Size is small. 
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
-
-        
-        private double price = 0.00;    //Private backing variable for the "Price" property.
-
-        /// <value>
+        /// <summary>
         /// Gets the price of the drink.
+        /// </summary>
+        /// <value>
+        /// In U.S. Dollars
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (Size == Size.Small) price = 0.62;
-                if (Size == Size.Medium) price = 0.87;
-                if (Size == Size.Large) price = 1.01;
-
-                return price;
+                switch (Size)
+                {
+                    case Size.Small: return 0.62;
+                    case Size.Medium: return 0.87;
+                    case Size.Large: return 1.01;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-
-        private uint calories = 0;  //Private backing variable for the "Calories" property.
-
-        /// <value>
+        /// <summary>
         /// Gets the calories of the drink. 
-        /// </value>
-        public uint Calories
+        /// </summary>
+        public override uint Calories
         {
             get
             {
-                if (Size == Size.Small) calories = 44;
-                if (Size == Size.Medium) calories = 88;
-                if (Size == Size.Large) calories = 132;
-
-                return calories;
+                switch (Size)
+                {
+                    case Size.Small: return 44;
+                    case Size.Medium: return 88;
+                    case Size.Large: return 132;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-        /// <value>
-        /// Gets the special instructions for creating an Aretino Apple Juice drink. 
-        /// </value>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the drink.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {
@@ -78,7 +74,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Changes the way the object is represented as a string.
         /// </summary>
-        /// <returns>The name of the entree.</returns>
+        /// <returns>The name of the drink.</returns>
         public override string ToString()
         {
             return $"{Size} Aretino Apple Juice";

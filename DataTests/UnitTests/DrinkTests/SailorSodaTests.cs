@@ -1,6 +1,5 @@
 ﻿/*
- * Author: Zachery Brunner
- * Edited by: Benjamin M. Manglona Jr.
+ * Author: Benjamin M. Manglona Jr.
  * Class: SailorSodaTests.cs
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
@@ -15,6 +14,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class SailorSodaTests
     {
+        [Fact]
+        public void ShouldBeADrink()
+        {
+            SailorSoda soda = new SailorSoda();
+            Assert.IsAssignableFrom<Drink>(soda);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            SailorSoda soda = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(soda);
+        }
+
         [Fact]
         public void ShouldIncludeIceByDefault()
         {

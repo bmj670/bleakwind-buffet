@@ -13,68 +13,64 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing a Candlehearth coffee drink.
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
-        /// <value>
-        /// Gets/sets whether the drink contains ice. False by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink contains ice. 
+        /// </summary>
         public bool Ice { get; set; } = false;
 
-        /// <value>
-        /// Gets/sets whether the drink contains creamer. False by default. 
+        /// <summary>
+        /// Gets/sets whether the drink contains creamer.
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-        /// <value>
-        /// Gets/sets whether the drink is decaf. False by default. 
-        /// </value>
+        /// <summary>
+        /// Gets/sets whether the drink is decaf.
+        /// </summary>
         public bool Decaf { get; set; } = false;
 
-        /// <value>
-        /// Gets/sets the size of the drink. Default Size is small. 
-        /// </value>
-        public Size Size { get; set; } = Size.Small;
-
-
-        private double price = 0.00;        //Private backing variable for the "Price" property.
-
-        /// <value>
+        /// <summary>
         /// Gets the price of the drink.
+        /// </summary>
+        /// <value>
+        /// In U.S. Dollars
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
-                if (Size == Size.Small) price = 0.75;
-                if (Size == Size.Medium) price = 1.25;
-                if (Size == Size.Large) price = 1.75;
-
-                return price;
+                switch (Size)
+                {
+                    case Size.Small: return 0.75;
+                    case Size.Medium: return 1.25;
+                    case Size.Large: return 1.75;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-
-        private uint calories = 0;      //Private backing variable for the "Calories" property.
-
-        /// <value>
-        /// Gets the calories of the drink. 
-        /// </value>
-        public uint Calories
+        /// <summary>
+        /// The calories of the drink. 
+        /// </summary>
+        public override uint Calories
         {
             get
             {
-                if (Size == Size.Small) calories = 7;
-                if (Size == Size.Medium) calories = 10;
-                if (Size == Size.Large) calories = 20;
-
-                return calories;
+                switch (Size)
+                {
+                    case Size.Small: return 7;
+                    case Size.Medium: return 10;
+                    case Size.Large: return 20;
+                    default: throw new NotImplementedException("Should never execute");
+                }
             }
         }
 
-        /// <value>
-        /// Gets the special instructions for creating a Candlehearth coffee drink. 
-        /// </value>
-        public List<string> SpecialInstructions
+        /// <summary>
+        /// The special instructions to create the drink.
+        /// </summary>
+        public override List<string> SpecialInstructions
         {
             get
             {
