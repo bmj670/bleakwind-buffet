@@ -131,5 +131,93 @@ namespace BleakwindBuffet.Data.Menu
             return result;
         }
 
+        /// <summary>
+        /// Creates new instances of the menu.
+        /// </summary>
+        /// <returns>
+        /// An "IEnumerable<IOrderItem>" of all food items offered by BleakwindBuffet.
+        /// </returns>
+        public IEnumerable<IOrderItem> FullMenu()
+        {
+            List<IOrderItem> result = new List<IOrderItem>();
+            Size[] availSizes = new Size[] { Size.Small, Size.Medium, Size.Large };
+            SodaFlavor[] availflav = new SodaFlavor[] { SodaFlavor.Blackberry, SodaFlavor.Cherry,
+                SodaFlavor.Grapefruit, SodaFlavor.Lemon,SodaFlavor.Peach, SodaFlavor.Watermelon
+            };
+
+            /*Creates Entrees*/
+            result.Add(new BriarheartBurger());
+            result.Add(new DoubleDraugr());
+            result.Add(new GardenOrcOmelette());
+            result.Add(new PhillyPoacher());
+            result.Add(new SmokehouseSkeleton());
+            result.Add(new ThalmorTriple());
+            result.Add(new ThugsTBone());
+
+            
+            foreach (Size currSize in availSizes)
+            {
+                /*Create sides*/
+                Side fries = new DragonbornWaffleFries
+                {
+                    Size = currSize
+                };
+                Side miraak = new FriedMiraak
+                {
+                    Size = currSize
+                };
+                Side grits = new MadOtarGrits
+                {
+                    Size = currSize
+                };
+                Side salad = new VokunSalad
+                {
+                    Size = currSize
+                };
+
+                /*Add sides to result*/
+                result.Add(fries);
+                result.Add(miraak);
+                result.Add(grits);
+                result.Add(salad);
+
+                /*Create drinks*/
+                Drink aj = new AretinoAppleJuice
+                {
+                    Size = currSize
+                };
+                Drink cof = new CandlehearthCoffee
+                {
+                    Size = currSize
+                };
+                Drink mlk = new MarkarthMilk
+                {
+                    Size = currSize
+                };
+                Drink wtr = new WarriorWater
+                {
+                    Size = currSize
+                };
+
+                /*Create sailor soda according to the avail. flavors*/
+                foreach (SodaFlavor currFlav in availflav)
+                {
+                    SailorSoda ss = new SailorSoda();
+                    ss.Flavor = currFlav;
+                    Drink soda = (Drink)ss;
+                    soda.Size = currSize;
+                    result.Add(soda);
+                }
+
+                /*Add Drinks to list*/
+                result.Add(aj);
+                result.Add(cof);
+                result.Add(mlk);
+                result.Add(wtr);
+
+            }
+                return result;
+        }
+
     }
 }

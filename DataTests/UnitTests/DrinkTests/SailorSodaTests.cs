@@ -4,7 +4,6 @@
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
 using System;
-
 using Xunit;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data;
