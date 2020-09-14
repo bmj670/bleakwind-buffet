@@ -4,6 +4,7 @@
  * Purpose: A static class representing a menu.
  */
 using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Menu;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
 using System;
@@ -16,7 +17,7 @@ namespace BleakwindBuffet.Data.Menu
     /// <summary>
     /// A static class representing the menu.
     /// </summary>
-    public class Menu
+    public static class Menu 
     {
         /// <summary>
         /// Creates new instances of all available entrees.
@@ -24,7 +25,7 @@ namespace BleakwindBuffet.Data.Menu
         /// <returns>
         /// An "IEnumerable<IOrderItem>" of all entrees offered by BleakwindBuffet.
         /// </returns>
-        public IEnumerable<IOrderItem> Entrees()
+        public static  IEnumerable<IOrderItem> Entrees()
         {
             List<IOrderItem> result = new List<IOrderItem>();
             result.Add(new BriarheartBurger());
@@ -44,7 +45,7 @@ namespace BleakwindBuffet.Data.Menu
         /// <returns>
         /// An "IEnumerable<IOrderItem>" of all sides offered by BleakwindBuffet.
         /// </returns>
-        public IEnumerable<IOrderItem> Sides()
+        public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> result = new List<IOrderItem>();
             Size[] availSizes = new Size[] { Size.Small, Size.Medium, Size.Large };
@@ -84,7 +85,7 @@ namespace BleakwindBuffet.Data.Menu
         /// <returns>
         /// An "IEnumerable<IOrderItem>" of all drinks offered by BleakwindBuffet.
         /// </returns>
-        public IEnumerable<IOrderItem> Drinks()
+        public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> result = new List<IOrderItem>();
             Size[] availSizes = new Size[] { Size.Small, Size.Medium, Size.Large };
@@ -137,7 +138,7 @@ namespace BleakwindBuffet.Data.Menu
         /// <returns>
         /// An "IEnumerable<IOrderItem>" of all food items offered by BleakwindBuffet.
         /// </returns>
-        public IEnumerable<IOrderItem> FullMenu()
+        public static IEnumerable<IOrderItem> FullMenu()
         {
             List<IOrderItem> result = new List<IOrderItem>();
             Size[] availSizes = new Size[] { Size.Small, Size.Medium, Size.Large };

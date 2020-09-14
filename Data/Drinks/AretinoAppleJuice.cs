@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing an Aretino Apple Juice drink.
     /// </summary>
-    public class AretinoAppleJuice : Drink
+    public class AretinoAppleJuice : Drink, IOrderItem
     {
         /// <summary>
         /// Gets/sets whether the drink contains ice. 

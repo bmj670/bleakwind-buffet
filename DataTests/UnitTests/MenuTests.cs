@@ -5,13 +5,13 @@
  */
 using Xunit;
 using BleakwindBuffet.Data.Menu;
-using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Sides;
 using System.Linq;
 using System.Collections.Generic;
+using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {
@@ -20,33 +20,33 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldHaveCorrectNumberOfEntrees()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> entrees = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Entrees();
             int totalEntrees = 7;
-            Assert.Equal(totalEntrees, menu.Entrees().Count());
+            Assert.Equal(totalEntrees, entrees.Count());
         }
 
         [Fact]
         public void ShouldHaveCorrectNumberOfDrinks()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> drinks = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Drinks();
             int totalDrinks = 30;
-            Assert.Equal(totalDrinks, menu.Drinks().Count());
+            Assert.Equal(totalDrinks, drinks.Count());
         }
 
         [Fact]
         public void ShouldHaveCorrectNumberOfSides()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> sides = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Sides();
             int totalSides = 12;
-            Assert.Equal(totalSides, menu.Sides().Count());
+            Assert.Equal(totalSides, sides.Count());
         }
 
         [Fact]
         public void ShouldReturnCorrectListOfEntrees()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> entrees = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Entrees();
 
-            Assert.Collection(menu.Entrees(),
+            Assert.Collection(entrees,
                     item => Assert.Equal("Briarheart Burger", item.ToString()),
                     item => Assert.Equal("Double Draugr", item.ToString()),
                     item => Assert.Equal("Garden Orc Omelette", item.ToString()),
@@ -61,9 +61,9 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldReturnCorrectListOfSides()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> sides = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Sides();
 
-            Assert.Collection(menu.Sides(),
+            Assert.Collection(sides,
                     item => Assert.Equal("Small Dragonborn Waffle Fries", item.ToString()),
                     item => Assert.Equal("Small Fried Miraak", item.ToString()),
                     item => Assert.Equal("Small Mad Otar Grits", item.ToString()),
@@ -86,9 +86,9 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldReturnCorrectListOfDrinks()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> drinks = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.Drinks();
 
-            Assert.Collection(menu.Drinks(),
+            Assert.Collection(drinks,
                     item => Assert.Equal("Small Blackberry Sailor Soda", item.ToString()),
                     item => Assert.Equal("Small Cherry Sailor Soda", item.ToString()),
                     item => Assert.Equal("Small Grapefruit Sailor Soda", item.ToString()),
@@ -131,9 +131,9 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldReturnFullMenuItems()
         {
-            Menu menu = new Menu();
+            List<IOrderItem> fullMenu = (List<IOrderItem>)BleakwindBuffet.Data.Menu.Menu.FullMenu();
 
-            Assert.Collection(menu.FullMenu(),
+            Assert.Collection(fullMenu,
                     item => Assert.Equal("Briarheart Burger", item.ToString()),
                     item => Assert.Equal("Double Draugr", item.ToString()),
                     item => Assert.Equal("Garden Orc Omelette", item.ToString()),
